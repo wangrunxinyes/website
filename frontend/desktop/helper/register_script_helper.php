@@ -37,7 +37,7 @@ class register_script_helper {
 			$basic = $_SERVER['SERVER_NAME'];
 		}
 		if (strlen($basic) < 3) {
-			$basic = "www.wangrunxin";
+			$basic = "http://www.wangrunxin.com";
 		}
 		return $basic;
 	}
