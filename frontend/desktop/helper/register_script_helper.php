@@ -12,7 +12,7 @@ class register_script_helper {
 		$this->client = Yii::app()->clientScript;
 		$this->client->registerScriptFile('http://libs.baidu.com/jquery/1.11.1/jquery.min.js');
 		$this->client->registerMetaTag(' text/html;charset=utf-8', null, 'Content-Type');
-		$this->global = str_replace("/backend", "", self::getBasicUrl());
+		$this->global = str_replace("/backend", "", Yii::app()->baseUrl);
 	}
 
 	function init() {
@@ -37,7 +37,7 @@ class register_script_helper {
 			$basic = $_SERVER['SERVER_NAME'];
 		}
 		if (strlen($basic) < 3) {
-			$basic = "www.wangrunxin.com";
+			$basic = "www.wangrunxin";
 		}
 		return $basic;
 	}
@@ -47,7 +47,7 @@ class register_script_helper {
 			if ($whole_url) {
 				$this->client->registerCssFile($filePath);
 			} else {
-				$this->client->registerCssFile(self::getBasicUrl() . "/assets/" . $filePath);
+				$this->client->registerCssFile(Yii::app()->baseUrl . "/assets/" . $filePath);
 			}
 		}
 	}
@@ -58,14 +58,14 @@ class register_script_helper {
 				if ($whole_url) {
 					$this->client->registerScriptFile($filePath, CClientScript::POS_END);
 				} else {
-					$this->client->registerScriptFile(self::getBasicUrl() . "/assets/" . $filePath, CClientScript::POS_END);
+					$this->client->registerScriptFile(Yii::app()->baseUrl . "/assets/" . $filePath, CClientScript::POS_END);
 				}
 
 			} else {
 				if ($whole_url) {
 					$this->client->registerScriptFile($filePath);
 				} else {
-					$this->client->registerScriptFile(self::getBasicUrl() . "/assets/" . $filePath);
+					$this->client->registerScriptFile(Yii::app()->baseUrl . "/assets/" . $filePath);
 				}
 
 			}
@@ -105,7 +105,7 @@ class register_script_helper {
 	}
 
 	public function getScirptPath($filePath) {
-		return self::getBasicUrl() . "/assets/" . $filePath;
+		return Yii::app()->baseUrl . "/assets/" . $filePath;
 	}
 
 	public function getUrlPath($filePath) {
