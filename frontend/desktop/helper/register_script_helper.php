@@ -34,7 +34,7 @@ class register_script_helper {
 	function getBasicUrl() {
 		$basic = Yii::app()->baseUrl;
 		if (strlen($basic) < 3) {
-			$basic = $_SERVER['SERVER_NAME'];
+			$basic = $_SERVER['HTTP_HOST'];
 		}
 		if (strlen($basic) < 3) {
 			$basic = "http://www.wangrunxin.com";
