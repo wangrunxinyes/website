@@ -111,7 +111,12 @@ class register_script_helper {
 	}
 
 	public function getUrlPath($filePath) {
-		return self::getBasicUrl() . $filePath;
+		if (substr($filePath, 0, 1) == "/") {
+			return self::getBasicUrl() . $filePath;
+		} else {
+			return self::getBasicUrl() . "/" . $filePath;
+		}
+
 	}
 }
 
