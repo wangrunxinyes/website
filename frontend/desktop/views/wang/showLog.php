@@ -4,8 +4,9 @@ $time = time();
 $date = date("Y:m:d 00:00:00", $time);
 $time = strtotime($date);
 
-echo "Basic Url:" . Yii::app()->baseUrl . "; End.";
-
+echo "Basic Url:" . Yii::app()->baseUrl . "; End.<BR>";
+echo "SERVER_NAME:" . $_SERVER['SERVER_NAME'] . "; End.<BR>";
+print_r($_SERVER);
 Yii::app()->
 	assets->registerGlobalCss("global/css/components.css");
 $data = R::getAll('select * from worklog where time > "' . $time . '"');
