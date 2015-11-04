@@ -1,0 +1,68 @@
+.header {
+	width: 100%;
+	//background: url('http://img01.taobaocdn.com/imgextra/i1/112258296/TB20mtScVXXXXbhXpXXXXXXXXXX_!!112258296.jpg') no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center;
+	background-size: 100% 100%;
+}
+.header-left {
+	float: left;
+	width: 35%;
+	margin-left:5%;
+	padding-top: 1.4%;
+}
+.header-left span {
+	width: 492px;
+	height: 564px;
+	display: block;
+	background: url('http://img01.taobaocdn.com/imgextra/i1/112258296/TB2eZuecVXXXXX5XXXXXXXXXXXX_!!112258296.png') no-repeat;
+}
+.header-right {
+	float: left;
+	width: 20%;
+	margin-left:7%;
+	margin-top: 2%;
+}
+
+.header-info{
+	float: left;
+	vertical-align: middle;
+	width: 20%;
+	height: 100%;
+	min-height: 320px;
+	margin-top: 2%;
+}
+
+.div-info{
+	margin-top: 40%;
+	vertical-align: middle;
+	min-height: 320px;
+}
+
+ul a:hover,
+ul a:focus {
+	outline: none;
+	color: red;
+	text-decoration: none;
+}
+
+.clear{clear:both;}/* clear float */
+.header-right h1{
+	color: #FFF;
+	font-size: 2em;
+	font-weight: 300;
+	padding: 2% 0 0 0;
+	text-shadow: -1px 0px 1px rgba(214, 214, 214, 0.59);
+	-webkit-text-shadow: -1px 0px 1px rgba(214, 214, 214, 0.59);
+	-moz-text-shadow: -1px 0px 1px rgba(214, 214, 214, 0.59);
+	-o-text-shadow: -1px 0px 1px rgba(214, 214, 214, 0.59);
+	line-height: 1.4em;
+}
+.header-right p{
+	color:#333;
+	font-size:2em;
+	font-weight:700;
+}
