@@ -6,12 +6,12 @@ Yii::app()->assets->registerGlobalCss("extensions/time.line/assets/style/base.cs
 
 header("Content-type: text/html; charset=utf-8");
 
-$con = mysqli_connect("localhost", "wangrunxin", "wrx52691000") or die("can't connect the server");
+$con = mysqli_connect("mysql.hostinger.com.hk", "u498749435_wang", "wrx52691000") or die("can't connect the server");
 If (!$con) {
 	//die output a message and terminate the current script
 	die('Could not connect: ' . mysqli_connect_errno());
 }
-mysqli_select_db($con, 'sqlwangrunxin') or die('Could not select database.');
+mysqli_select_db($con, 'u498749435_wrx') or die('Could not select database.');
 
 $query = 'SELECT *
 FROM  `appinfo`
