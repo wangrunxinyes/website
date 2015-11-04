@@ -36,7 +36,6 @@ class register_script_helper {
 
 		if (strlen($basic) < 3) {
 			$basic = "http://" . $_SERVER['HTTP_HOST'];
-			$basic = substr($basic, 0, strlen($basic) - 1);
 		}
 
 		if (strlen($basic) < 3) {
@@ -112,7 +111,7 @@ class register_script_helper {
 	}
 
 	public function getUrlPath($filePath) {
-		return self::getBasicUrl() . '/' . $filePath;
+		return self::getBasicUrl() . $filePath;
 	}
 }
 
