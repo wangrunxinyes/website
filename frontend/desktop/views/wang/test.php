@@ -304,7 +304,7 @@ Yii::app()->assets->registerGlobalScript("extensions/index/js/main.js", true);
         <div id="row">
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
-                    <img src="img/team/01.jpg" alt="..." class="img-circle team-img">
+                    <img src="<?php echo Yii::app()->assets->getUrlPath("assets/global/images/wechat.png")?>" alt="..." class="img-circle team-img">
                     <div class="caption">
                         <h3>Wechat Control Platform</h3>
                         <p>Website</p>
@@ -316,7 +316,7 @@ Yii::app()->assets->registerGlobalScript("extensions/index/js/main.js", true);
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
-                    <img src="img/team/02.jpg" alt="..." class="img-circle team-img">
+                    <img src="<?php echo Yii::app()->assets->getUrlPath("assets/global/images/car.png")?>" alt="..." class="img-circle team-img">
                     <div class="caption">
                         <h3>Tongcheng China</h3>
                         <p>IOS Apps</p>
@@ -326,7 +326,7 @@ Yii::app()->assets->registerGlobalScript("extensions/index/js/main.js", true);
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
-                    <img src="img/team/03.jpg" alt="..." class="img-circle team-img">
+                    <img src="<?php echo Yii::app()->assets->getUrlPath("assets/global/images/flybox.jpg")?>" alt="..." class="img-circle team-img">
                     <div class="caption">
                         <h3>Fly Box</h3>
                         <p>Android Apps</p>
