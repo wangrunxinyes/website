@@ -100,7 +100,7 @@ Yii::app()->assets->registerGlobalScript("extensions/index/js/main.js", true);
                 <div class="col-md-8 col-md-offset-2">
                     <h1>
                         Welcome to visit
-                        <span class="brand-heading">WANG Runxin's11111111</span>
+                        <span class="brand-heading">WANG Runxin's</span>
                     </h1>
                     <p class="intro-text">personal website</p>
                     <a href="#services" class="btn btn-circle page-scroll">
