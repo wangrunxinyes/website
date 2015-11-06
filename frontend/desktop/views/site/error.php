@@ -162,58 +162,12 @@ echo Yii::app()->request->hostInfo . Yii::app()->homeUrl . 'admin/index/par/log'
 <iframe scrolling='no' frameborder='0' src='http://yibo.iyiyun.com/Home/Distribute/ad404/key/551778' width='654' height='470' style="display: block; text-align: center; margin: auto;"></iframe>
 	</div>
 
+<div><h5 style="color:white;"><a href="http://api.hostinger.com.hk/redir/10806453" target="_blank" style="margin-left:5px;"><img src="http://www.hostinger.com.hk/banners/cn/hostinger-80x15-powered-1.gif" alt="虚拟主机" width="80" height="15" border="0" /></a></h5>
+</div>
 </div>
 
 
 </main>
-
-
-
-
-
-
-
-<script src="<?php echo Yii::app()->baseUrl;?>/assets/global.style/js/jquery.min.js"></script>
-
-
-
-<script src="<?php echo Yii::app()->baseUrl;?>/assets/global.style/js/fakeLoader.min.js"></script>
-
-
-
-    <script>
-
-
-
-        $(document).ready(function(){
-
-
-
-            $(".fakeloader").fakeLoader({
-
-
-
-                timeToHide:1200,
-
-
-
-                bgColor:"#2ecc71",
-
-
-
-                spinner:"spinner1"
-
-
-
-            });
-
-
-
-        });
-
-
-
-</script>
 
 
 
