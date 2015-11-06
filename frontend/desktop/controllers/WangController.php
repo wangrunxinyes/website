@@ -34,12 +34,12 @@ class WangController extends Controller {
 
 	public function actionIndex() {
 		$this->layout = "clean";
-		$this->render('index');
+		$this->render('test');
 	}
 
 	public function actionTest() {
 		$this->layout = "clean";
-		$this->render('test');
+		$this->render('index');
 	}
 
 	public function actionFramework() {
