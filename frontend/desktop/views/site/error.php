@@ -129,7 +129,6 @@ $this->breadcrumbs = array(
 </div>
 
 
-
 <nav class="nav-choices">
 
 
@@ -158,10 +157,12 @@ echo Yii::app()->request->hostInfo . Yii::app()->homeUrl . 'admin/index/par/log'
 
 </nav>
 
+<div style="width:100%; margin-top: 5%; text-align:center">
 
+<iframe scrolling='no' frameborder='0' src='http://yibo.iyiyun.com/Home/Distribute/ad404/key/551778' width='654' height='470' style="display: block; text-align: center; margin: auto;"></iframe>
+	</div>
 
 </div>
-
 
 
 </main>
