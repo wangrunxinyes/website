@@ -307,10 +307,11 @@ Yii::app()->assets->registerGlobalScript("extensions/index/js/main.js", true);
                     <img src="<?php echo Yii::app()->assets->getUrlPath("assets/global/images/wechat.png")?>" alt="..." class="img-circle team-img">
                     <div class="caption">
                         <h3>Wechat Control Platform</h3>
-                        <p>Website</p>
+                        <p>CMS Website</p>
                         <p>
                             Including Wechat Oauth2.0 authorization, service account register, CMS system and the whole website for end custom
                         </p>
+                        <button type="submit" onclick="window.location.href='http://www.tongchengchina.com/backend/aboutus'" class="btn btn-default wrx-buttton-project">details</button>
                     </div>
                 </div>
             </div>
@@ -319,8 +320,8 @@ Yii::app()->assets->registerGlobalScript("extensions/index/js/main.js", true);
                     <img src="<?php echo Yii::app()->assets->getUrlPath("assets/global/images/car.png")?>" alt="..." class="img-circle team-img">
                     <div class="caption">
                         <h3>Tongcheng China</h3>
-                        <p>IOS Apps</p>
-                        <p>.</p>
+                        <p>CMS Website and ios app</p>
+                        <p>Carpool platform, including backend website, database desktop website and mobile apps.</p>
                     </div>
                 </div>
             </div>
@@ -329,18 +330,18 @@ Yii::app()->assets->registerGlobalScript("extensions/index/js/main.js", true);
                     <img src="<?php echo Yii::app()->assets->getUrlPath("assets/global/images/flybox.jpg")?>" alt="..." class="img-circle team-img">
                     <div class="caption">
                         <h3>Fly Box</h3>
-                        <p>Android Apps</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Android App</p>
+                        <p>Social Networking App. Special-Class award of the first China Software Cup.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
-                    <img src="img/team/04.jpg" alt="..." class="img-circle team-img">
+                    <img src="<?php echo Yii::app()->assets->getUrlPath("assets/global/images/oauth.jpg")?>" alt="..." class="img-circle team-img">
                     <div class="caption">
-                        <h3>Oauth2.0</h3>
-                        <p>Project Manager</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Oauth 2.0 and its security analysis</h3>
+                        <p>Paper and android app</p>
+                        <p>Master's Thesis, including a papar on Oauth 2.0 vulnerability and a demo app.</p>
                     </div>
                 </div>
             </div>
