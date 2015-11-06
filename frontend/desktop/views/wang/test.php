@@ -309,7 +309,7 @@ Yii::app()->assets->registerGlobalScript("extensions/index/js/main.js", true);
                         <h3>Wechat Control Platform</h3>
                         <p>CMS Website</p>
                         <p>
-                            Including Wechat Oauth2.0 authorization, service account register, CMS system and the whole website for end custom
+                            Including Wechat Oauth2.0 authorization, service account register, CMS system and the whole website for end customer.
                         </p>
                         <button type="submit" onclick="window.location.href='http://www.tongchengchina.com/backend/aboutus'" class="btn btn-default wrx-buttton-project">details</button>
                     </div>
