@@ -9,6 +9,7 @@ if(isset($_GET['miumiu'])){
 		$result = R::load("miumiu", $_GET['miumiu']);
 		if (!is_null($result->id)) {
 			$state = $result->state;
+			print_r($result);
 			if($state == "1" || $state = 1){
 				$result->state = 0;
 				R::store($result);
