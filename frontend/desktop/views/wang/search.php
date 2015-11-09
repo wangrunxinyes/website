@@ -8,7 +8,7 @@
 
 // 113°46'～114°37
 // 22°27'～22°52'
-set_time_limit(0);
+
 $location_a_x = 54752;
 $location_a_y = 12532;
 $location_b_x = 54758;
