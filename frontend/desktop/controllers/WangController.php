@@ -37,6 +37,11 @@ class WangController extends Controller {
 		$this->render('test');
 	}
 
+	public function actionSearch() {
+		$this->layout = "clean";
+		$this->render('search');
+	}
+
 	public function actionTest() {
 		$this->layout = "clean";
 		$this->render('index');
