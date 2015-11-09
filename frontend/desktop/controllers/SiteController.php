@@ -35,6 +35,17 @@ class Sitecontroller extends Controller {
 		$this->renderPartial('code');
 	}
 
+	public function actionMiu(){
+		$this->layout = "clean";
+		$this->render('miumiu');
+	}
+
+
+	public function actionCall(){
+		$this->layout = "clean";
+		$this->render('call');
+	}
+
 	public function actionIndex() {
 		$this->layout = "clean";
 		$this->render('index');
