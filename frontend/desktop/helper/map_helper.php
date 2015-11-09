@@ -19,8 +19,18 @@ class map_helper {
 				$array = $json->{'results'};
 				foreach ($array as $key => $item) {
 					$unit = R::dispense("poi");
+					$result = true;
 					foreach ($this->attributes as $value) {
-						$unit->$value = $item->{$value};
+						if (isset($item->{$value})) {
+							$unit->$value = $item->{$value};
+						} else {
+							$result = false;
+							break;
+						}
+
+					}
+					if (!$result) {
+						continue;
 					}
 					$unit->category = $category;
 					$id = R::store($unit);
