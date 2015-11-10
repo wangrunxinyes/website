@@ -32,6 +32,11 @@ class WangController extends Controller {
 
 	}
 
+	public function actionPoi(){
+		$this->layout = "clean";
+		$this->render('poi');
+	}
+
 	public function actionIndex() {
 		$this->layout = "clean";
 		$this->render('test');
