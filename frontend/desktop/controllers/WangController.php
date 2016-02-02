@@ -87,6 +87,7 @@ class WangController extends Controller {
 				$continue = false;
 			}
 		}
+		sort($data);
 		print_r($data);
 	}
 
