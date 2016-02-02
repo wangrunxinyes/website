@@ -32,7 +32,7 @@ class WangController extends Controller {
 
 	}
 
-	public function actionPoi(){
+	public function actionPoi() {
 		$this->layout = "clean";
 		$this->render('poi');
 	}
@@ -73,6 +73,21 @@ class WangController extends Controller {
 	public function actionLogin() {
 		$this->layout = "clean";
 		$this->render('login');
+	}
+
+	public function actionGetCode() {
+		$data = array();
+		$continue = true;
+		while ($continue) {
+			$number = rand(1, 45);
+			if (!in_array($number, $data)) {
+				array_push($data, $number);
+			}
+			if (count($data) == 6) {
+				$continue = false;
+			}
+		}
+		print_r($data);
 	}
 
 	public function actionLog() {
