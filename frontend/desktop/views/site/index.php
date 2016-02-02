@@ -42,7 +42,7 @@ Yii::app()->assets->registerScript("extensions/home/js/bootstrap.min.js");
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 								<ul class="nav navbar-nav float-nav nav-algn_r">
 									<li>
-										<a class="active">Custom</a>
+										<a href="<?php echo Yii::app()->assets->getUrlPath('wang/getCode'); ?>" class="active">Custom</a>
 									</li>
 								</ul>
 								<div class="logo float-nav nav-algn_c">
@@ -52,7 +52,7 @@ Yii::app()->assets->registerScript("extensions/home/js/bootstrap.min.js");
 								</div>
 								<ul class="nav navbar-nav navbar-right float-nav nav-algn_l">
 									<li>
-										<a href="<?php echo Yii::app()->assets->getUrlPath('site/about');?>">About</a>
+										<a href="<?php echo Yii::app()->assets->getUrlPath('site/about'); ?>">About</a>
 									</li>
 								</ul>
 								<div class="clearfix"></div>
