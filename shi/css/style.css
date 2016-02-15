@@ -465,6 +465,11 @@ section.inner {
 }
 
 
+.service-box{
+	text-align: center!important;
+}
+
+
 /* === section spacer === */
 
 section.spacer {
