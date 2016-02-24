@@ -87,7 +87,7 @@ class visitor_helper {
 		}
 	}
 
-	function get_ip() {
+	public static function get_ip() {
 		$iipp = $_SERVER["REMOTE_ADDR"];
 		if ($iipp == null || $iipp = "" || count($iipp) < 2) {
 			$iipp = "0.0.0.0";
@@ -95,7 +95,7 @@ class visitor_helper {
 		return $iipp;
 	}
 
-	function get_ip_info() {
+	public static function get_ip_info() {
 
 	}
 }
