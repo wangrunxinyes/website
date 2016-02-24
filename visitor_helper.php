@@ -12,7 +12,34 @@ class visitor_helper {
 	}
 
 	public static function store_visitor() {
+		$attrName = "web_visitor";
 
+		$ip = self::get_ip();
+		$search = ' ip = :ip';
+		$searchValue = array(
+			':ip' => $ip,
+		);
+
+		$data = R::find($attrName, $search, $searchValue);
+		$data = R::exportAll($data);
+		if (count($data) > 0) {
+			$unit = R::load($attrName, $data[0]["id"]);
+			$unit->count += 1;
+		} else {
+			$unit = R::dispense($attrName);
+			$unit->count = 1;
+			$unit->create_time = time();
+		}
+
+		if (self::is_moble()) {
+			$unit->type = "M";
+		} else {
+			$unit->type = "D";
+		}
+
+		$unit->ip = $ip;
+		$unit->last_visit_time = time();
+		R::store($unit);
 	}
 
 	public static function is_moble() {

@@ -41,6 +41,11 @@ class AdminController extends Controller {
 		// }
 		$this->render('index');
 	}
+
+	public function actionLogin() {
+		$this->layout = "clean";
+		$this->render('login');
+	}
 }
 
 ?>

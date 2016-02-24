@@ -1,1 +1,0 @@
-<a href="http://<?php echo $_SERVER['SERVER_NAME'] . "/phpMyAdmin";?>">Control Database</a>

@@ -46,7 +46,7 @@ return array(
 
 			'allowAutoLogin' => true,
 
-			'class' => 'WebUser',
+			'class' => 'application.components.WebUser',
 
 		),
 
@@ -142,13 +142,13 @@ return array(
 
 				/*
 
-			array(
+					array(
 
-			'class'=>'CWebLogRoute',
+					'class'=>'CWebLogRoute',
 
-			),
+					),
 
-			 */
+				*/
 
 			),
 

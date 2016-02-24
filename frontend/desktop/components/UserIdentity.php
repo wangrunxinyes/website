@@ -1,70 +1,10 @@
 <?php
 
-/**
-
-
-
-
-
-
-
- * UserIdentity represents the data needed to identity a user.
-
-
-
-
-
-
-
- * It contains the authentication method that checks if the provided
-
-
-
-
-
-
-
- * data can identity the user.
-
-
-
-
-
-
-
- */
-
 class UserIdentity extends CUserIdentity {
 
 	private $_id;
 
 	private $_model;
-
-	/**
-
-
-
-
-
-
-
-	 * Authenticates a user.
-
-
-
-
-
-
-
-	 * @return boolean whether authentication succeeds.
-
-
-
-
-
-
-
-	 */
 
 	public function validatePassword($password) {
 
@@ -92,25 +32,25 @@ class UserIdentity extends CUserIdentity {
 
 	public function authenticateWithUser($user) {
 
-		Logger::log("login", "login user: " . $user->main_user_general_uname
+		Logger::log("login", "login user: " . $user->getValue('wrx_username')
 
-			. " and password: " . $this->password . "; key: " . $user->main_user_general_psw);
+			. " and password: " . $this->password . "; key: " . $user->getValue('wrx_password'));
 
 		if ($user === null) {
 
 			$this->errorCode = self::ERROR_USERNAME_INVALID;
 
-		} else if (!self::validatePassword($user->main_user_general_psw)) {
+		} else if (!self::validatePassword($user->getValue('wrx_password'))) {
 
 			$this->errorCode = self::ERROR_PASSWORD_INVALID;
 
 		} else {
 
-			$this->_id = $user->id;
+			$this->_id = $user->getValue('id');
 
-			$this->username = $user->main_user_general_uname;
+			$this->username = $user->getValue('wrx_username');
 
-			$this->_model = wrx_model_user::create($user);
+			$this->_model = $user;
 
 			$this->errorCode = self::ERROR_NONE;
 
@@ -119,24 +59,6 @@ class UserIdentity extends CUserIdentity {
 		return $this->errorCode == self::ERROR_NONE;
 
 	}
-
-	/**
-
-
-
-
-
-
-
-	 * @return integer the ID of the user record
-
-
-
-
-
-
-
-	 */
 
 	public function getId() {
 

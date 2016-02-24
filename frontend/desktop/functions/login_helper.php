@@ -20,6 +20,8 @@ class login_helper extends BasicData {
 
 	const LOGIN_SYSTEM_ERROR = 9;
 
+	const OAUTH = 10;
+
 	private $db_user;
 
 	private $need_code;
@@ -114,9 +116,10 @@ class login_helper extends BasicData {
 
 	public function getUser() {
 
-		$user = R::findOne('main_user_general', "main_user_general_uname='" . $this->value_array['username'] . "'");
+		$user = new wrx_model_user();
+		$user->getUserByName($this->value_array['username']);
 
-		if (isset($user->id)) {
+		if (!is_null($user->getValue('id'))) {
 
 			$this->db_user = $user;
 
@@ -132,7 +135,7 @@ class login_helper extends BasicData {
 
 	public function checkUserLocked() {
 
-		if ($this->db_user->main_user_general_state > 5) {
+		if ($this->db_user->getValue('wrx_state') > 5) {
 
 			return false;
 
@@ -146,7 +149,7 @@ class login_helper extends BasicData {
 
 	public function checkCode() {
 
-		if ($this->db_user->main_user_general_state > 3 && $this->db_user->main_user_general_state <= 5) {
+		if ($this->db_user->getValue('wrx_state') > 3 && $this->db_user->getValue('wrx_state') <= 5) {
 
 			if (Yii::app()->data->getValue("code") != null && Yii::app()->data->getValue("code") == Yii::app()->session['main_user_login_code']) {
 
@@ -222,9 +225,9 @@ class login_helper extends BasicData {
 
 			} else {
 
-				$this->db_user->main_user_general_state = 0;
+				$this->db_user->setPar('wrx_state', 0);
 
-				R::store($this->db_user);
+				$this->db_user->store();
 
 				return self::NO_ERROR;
 
@@ -234,17 +237,17 @@ class login_helper extends BasicData {
 
 			if ($this->need_code) {
 
-				$this->db_user->main_user_general_state += 1;
+				$this->db_user->setPar('wrx_state', $this->db_user->getValue('wrx_state') + 1);
 
-				R::store($this->db_user);
+				$this->db_user->store();
 
 				return self::PASSWORD_ERROR_NEED_CODE;
 
 			} else {
 
-				$this->db_user->main_user_general_state += 1;
+				$this->db_user->setPar('wrx_state', $this->db_user->getValue('wrx_state') + 1);
 
-				R::store($this->db_user);
+				$this->db_user->store();
 
 				return self::PASSWORD_ERROR;
 
@@ -256,9 +259,7 @@ class login_helper extends BasicData {
 
 	public function getUserAttributes() {
 
-		$user = R::exportAll($this->db_user);
-
-		return $user[0];
+		return $this->db_user;
 
 	}
 
