@@ -1,5 +1,5 @@
 <div class="alert alert-success">
-	<h3>微信公众号管理平台 | Wechat Control Platform</h3> <strong>版本 | Version</strong>
+	<h3>WRX STU后台管理平台 | WRX STU Control Platform</h3> <strong>版本 | Version</strong>
 	<small style="margin-left:10px;">Build 103.3.13</small>
 	<br> <strong>版权 | Copyright</strong>
 	<small style="margin-left:10px;">© wangrunxin.com, Inc.</small>
@@ -13,33 +13,19 @@
 			<div class="col-md-3">
 				<div class="meet-our-team">
 					<p>
-						微信关注用户
+						网站访问信息统计
 						<br>
-						微信用户分组
+						网站访问信息分析
 						<br>
-						微信用户信息
+						简历访问量统计
 						<br>
-						微信用户信息导出
-						<br>
-						微信信息接收与回复
-						<br>
-						微信推送信息
-						<br>
-						微信Oauth2.0认证
-						<br>用户信息的统计与分析</p>
+						信息接收与回复
+						<br></p>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="meet-our-team">
 					<p>
-						产品展示
-						<br>
-						产品编辑
-						<br>
-						用户基本功能
-						<br>
-						自定义页面及功能
-						<br>
 						数据库备份与恢复
 						<br></p>
 				</div>

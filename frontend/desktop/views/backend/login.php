@@ -86,7 +86,7 @@ Yii::app()->assets->registerScript('custom.files/js/handle.login.js');
 
   <a>
 
-    <img src="<?php echo Yii::app()->baseUrl;?>/assets/admin/layout/img/logo-big.png" alt=""/></a>
+    <img src="<?php echo Yii::app()->baseUrl; ?>/assets/admin/layout/img/logo-big.png" alt=""/></a>
 
 </div>
 -->
@@ -95,9 +95,9 @@ Yii::app()->assets->registerScript('custom.files/js/handle.login.js');
 <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 
 <input type="hidden" value="<?php echo Yii::app()->
-	request->hostInfo . Yii::app()->homeUrl;?>data/login" id="login_url"/>
+	request->hostInfo . Yii::app()->homeUrl; ?>data/login" id="login_url"/>
 <input type="hidden" value="<?php echo Yii::app()->
-	request->hostInfo . Yii::app()->homeUrl;?>data/code/rnd/" id="login_code_url"/>
+	request->hostInfo . Yii::app()->homeUrl; ?>data/code/rnd/" id="login_code_url"/>
 <input type="hidden" value="<?php
 
 $redirect_url = Yii::app()->
@@ -205,7 +205,7 @@ if ($redirect_url != null) {
       <div class="forget-password">
 
         <p>版本信息&nbsp;
-          <a href="<?php echo Yii::app()->assets->getUrlPath('backend/aboutus')?>" id="">关于微信公众号管理系统</a>
+          <a href="<?php echo Yii::app()->assets->getUrlPath('backend/aboutus') ?>" id="">关于后台管理系统</a>
         </p>
 
       </div>
@@ -214,7 +214,7 @@ if ($redirect_url != null) {
 
         <div class="copyright">
 
-          <p>&nbsp; WANG RUNXIN OAUTH CENTER</p>
+          <p>&nbsp; WANG RUNXIN AUTH CENTER</p>
 
         </div>
 
@@ -490,7 +490,7 @@ jQuery(document).ready(function() {
 
 
 
-        "<?php echo Yii::app()->assets->getScirptPath('admin/pages/media/bg/1.jpg');?>",
+        "<?php echo Yii::app()->assets->getScirptPath('admin/pages/media/bg/1.jpg'); ?>",
 
 
 
@@ -498,7 +498,7 @@ jQuery(document).ready(function() {
 
 
 
-        "<?php echo Yii::app()->assets->getScirptPath('admin/pages/media/bg/2.jpg');?>",
+        "<?php echo Yii::app()->assets->getScirptPath('admin/pages/media/bg/2.jpg'); ?>",
 
 
 
@@ -506,7 +506,7 @@ jQuery(document).ready(function() {
 
 
 
-        "<?php echo Yii::app()->assets->getScirptPath('admin/pages/media/bg/3.jpg');?>",
+        "<?php echo Yii::app()->assets->getScirptPath('admin/pages/media/bg/3.jpg'); ?>",
 
 
 
@@ -514,7 +514,7 @@ jQuery(document).ready(function() {
 
 
 
-        "<?php echo Yii::app()->assets->getScirptPath('admin/pages/media/bg/4.jpg');?>"
+        "<?php echo Yii::app()->assets->getScirptPath('admin/pages/media/bg/4.jpg'); ?>"
 
 
 

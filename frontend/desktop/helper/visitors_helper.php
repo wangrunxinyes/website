@@ -20,6 +20,12 @@ class visitors_helper {
 	public static function getAllVisitorsNumber() {
 
 	}
+
+	public static function getIpInfo($ip) {
+		$url = 'http://ip.taobao.com/service/getIpInfo.php?ip=' . $ip;
+		$data = curl_helper::curl($url);
+		return json_decode($data, true);
+	}
 }
 
 ?>

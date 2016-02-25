@@ -81,7 +81,7 @@ if (time() - $system->
 
 	</div>
 
-	<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+	<!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 
 		<div class="dashboard-stat green-haze">
 
@@ -94,7 +94,7 @@ if (time() - $system->
 			<div class="details">
 
 				<div class="number">
-					<?php echo visitors_helper::getNewVisitors(); ?>次</div>
+					次</div>
 
 				<div class="desc">简历访问次数</div>
 
@@ -109,18 +109,18 @@ if (time() - $system->
 		</div>
 
 	</div>
-
+ -->
 </div>
 
-<div class="alert alert-info" style="display:none;">
+<div class="alert alert-info">
 
-	<label style="font-size:18px">快捷入口</label>
+	<label style="font-size:18px">系统模块</label>
 
 	<br>
 
 	<div class="tiles">
 
-		<div class="tile bg-blue-steel" onclick="javascript:reLoad(id);" id ="schedule_list">
+<!-- 		<div class="tile bg-blue-steel" onclick="javascript:reLoad(id);" id ="schedule_list">
 
 			<div class="tile-body">
 
@@ -130,13 +130,13 @@ if (time() - $system->
 
 			<div class="tile-object">
 
-				<div class="name"></div>
+				<div class="name">1次</div>
 
-				<div class="number">推送信息</div>
+				<div class="number">简历访问</div>
 
 			</div>
 
-		</div>
+		</div> -->
 
 		<div class="tile bg-green" onclick="javascript:reLoad(id);" id ="order_list">
 
@@ -148,15 +148,15 @@ if (time() - $system->
 
 			<div class="tile-object">
 
-				<div class="name"></div>
+				<div class="name">1次</div>
 
-				<div class="number">数据统计</div>
+				<div class="number">简历访问</div>
 
 			</div>
 
 		</div>
 
-		<div class="tile bg-green-meadow" onclick="javascript:reLoad(id);" id ="car_list">
+		<!-- <div class="tile bg-green-meadow" onclick="javascript:reLoad(id);" id ="car_list">
 
 			<div class="tile-body">
 
@@ -208,7 +208,7 @@ if (time() - $system->
 
 			</div>
 
-		</div>
+		</div> -->
 
 	</div>
 

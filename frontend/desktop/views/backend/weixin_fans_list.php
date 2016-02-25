@@ -14,20 +14,6 @@ Yii::app()->assets->registerGlobalScript('custom.files/js/handle.search.js');
 
 $list = new wrx_view_user_list();
 $list->execute();
-
-$system = wrx_model_system_basic::load();
-if ($system->getValue('s_reload_all_user_data') == 0) {
-	$info = '上次重载时间:' . date("Y/m/d H:i:s", $system->getValue('s_last_reload_all_user_data'));
-	$info .= '【成功】';
-	$show_reload = "";
-} elseif ($system->getValue('s_reload_all_user_data') == 1) {
-	$info = '重载中...';
-	$show_reload = 'style="display:none;"';
-} else {
-	$info = '上次重载时间:' . date("Y/m/d H:i:s", $system->getValue('s_last_reload_all_user_data'));
-	$info .= '【失败: ' . $system->getValue('s_reload_all_user_data') . '】';
-	$show_reload = "";
-}
 ?>
 <!-- BEGIN EXAMPLE TABLE PORTLET-->
 <script type="text/javascript">
@@ -39,7 +25,7 @@ if ($system->getValue('s_reload_all_user_data') == 0) {
 	});
 </script>
 <div style="" class="table-container">
-<input type="hidden" value="<?php echo md5("weixin_user_list");?>" id="wrx-table-type">
+<input type="hidden" value="<?php echo md5("weixin_user_list"); ?>" id="wrx-table-type">
 	<div class="dataTables_wrapper dataTables_extended_wrapper no-footer" id="datatable_products_wrapper">
 		<div class="table-scrollable">
 			<table role="grid" aria-describedby="datatable_products_info" class="table table-striped table-bordered table-hover dataTable no-footer" id="datatable_products">
@@ -50,67 +36,22 @@ if ($system->getValue('s_reload_all_user_data') == 0) {
 									: activate to sort column ascending" colspan="1" rowspan="1" aria-controls="datatable_products" tabindex="0" class="sorting_asc" width="10%">ID</th>
 						<th aria-label="
 										 weixin_img
-									: activate to sort column ascending" colspan="1" rowspan="1" aria-controls="datatable_products" tabindex="0" class="sorting" width="15%">微信头像</th>
+									: activate to sort column ascending" colspan="1" rowspan="1" aria-controls="datatable_products" tabindex="0" class="sorting" width="15%">IP地址</th>
 						<th aria-label="
 										 weixin_name
-									: activate to sort column ascending" colspan="1" rowspan="1" aria-controls="datatable_products" tabindex="0" class="sorting" width="15%">微信账号</th>
+									: activate to sort column ascending" colspan="1" rowspan="1" aria-controls="datatable_products" tabindex="0" class="sorting" width="15%">访问次数</th>
 						<th aria-label="
 										 real_name
-									: activate to sort column ascending" colspan="1" rowspan="1" aria-controls="datatable_products" tabindex="0" class="sorting" width="10%">姓名</th>
+									: activate to sort column ascending" colspan="1" rowspan="1" aria-controls="datatable_products" tabindex="0" class="sorting" width="10%">设备类型</th>
 						<th aria-label="
 										 phone
-									: activate to sort column ascending" colspan="1" rowspan="1" aria-controls="datatable_products" tabindex="0" class="sorting" width="10%">手机号</th>
+									: activate to sort column ascending" colspan="1" rowspan="1" aria-controls="datatable_products" tabindex="0" class="sorting" width="10%">最后访问时间</th>
 						<th aria-label="
 										 create_date
-									: activate to sort column ascending" colspan="1" rowspan="1" aria-controls="datatable_products" tabindex="0" class="sorting" width="15%">创建日期</th>
-						<th aria-label="
-										 member_card
-									: activate to sort column ascending" colspan="1" rowspan="1" aria-controls="datatable_products" tabindex="0" class="sorting" width="10%">会员编号</th>
+									: activate to sort column ascending" colspan="1" rowspan="1" aria-controls="datatable_products" tabindex="0" class="sorting" width="15%">初次访问日期</th>
 						<th aria-label="
 										 Actions
 									: activate to sort column ascending" colspan="1" rowspan="1" aria-controls="datatable_products" tabindex="0" class="sorting" width="10%">操作</th>
-					</tr>
-					<tr role="row" class="filter">
-						<td colspan="1" rowspan="1">-
-							<!-- <input class="form-control form-filter input-sm" name="index" type="text">--></td>
-						<td colspan="1" rowspan="1">-
-							<!-- <input class="form-control form-filter input-sm" name="product_name" type="text">--></td>
-						<td colspan="1" rowspan="1">
-							<input class="form-control form-filter input-sm" name="weixin_name" type="text"></td>
-						<td colspan="1" rowspan="1">
-							<input class="form-control form-filter input-sm" name="real_name" type="text"></td>
-						<td colspan="1" rowspan="1">
-							<input class="form-control form-filter input-sm" name="phone" type="text"></td>
-						<td colspan="1" rowspan="1">-
-							<!-- <div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
-								<input class="form-control form-filter input-sm" readonly="" name="product_created_from" placeholder="From" type="text">
-								<span class="input-group-btn">
-									<button class="btn btn-sm default" type="button"> <i class="fa fa-calendar"></i>
-									</button>
-								</span>
-							</div>
-							<div class="input-group date date-picker" data-date-format="dd/mm/yyyy">
-								<input class="form-control form-filter input-sm" readonly="" name="product_created_to " placeholder="To" type="text">
-								<span class="input-group-btn">
-									<button class="btn btn-sm default" type="button"> <i class="fa fa-calendar"></i>
-									</button>
-								</span>
-							</div> -->
-						</td>
-						<td colspan="1" rowspan="1">
-							<input class="form-control form-filter input-sm" name="member_id" type="text"></td>
-						<td colspan="1" rowspan="1">
-							<div class="margin-bottom-5">
-								<button class="btn btn-sm yellow filter-submit margin-bottom">
-									<i class="fa fa-search"></i>
-									搜索
-								</button>
-							</div>
-							<button class="btn btn-sm red filter-cancel">
-								<i class="fa fa-times"></i>
-								重置
-							</button>
-						</td>
 					</tr>
 				</thead>
 				<tbody class="wrx-table-body">
@@ -147,20 +88,6 @@ if ($system->getValue('s_reload_all_user_data') == 0) {
 					<label class="wrx-end-id">
 						<?php $list->echoEnd();?></label>
 					条
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-12">
-				<label id="reload_info"><?php echo $info;?></label>
-				<div class="table-group-actions pull-right" <?php echo $show_reload;?>>
-					<span></span>
-					<button class="btn btn-sm red wrx-reload-all-user">
-						<i class="fa fa-check"></i>
-						重载数据
-					</button>
-					<button class="btn btn-sm green wrx-refresh-this-view">
-						<i class="fa fa-refresh"></i>
-						刷新列表
-					</button>
 				</div>
 			</div>
 		</div>
