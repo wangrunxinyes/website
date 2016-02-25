@@ -3,7 +3,7 @@
 /**
  *
  */
-class backend_member_data_helper {
+class backend_vip_data_helper {
 
 	function __construct() {
 		# code...
@@ -11,11 +11,11 @@ class backend_member_data_helper {
 
 	public static function get_data_by_page_number($page) {
 		$start_id = 10 * (-1 + $page);
-		$sql = 'select * from web_visitor'
+		$sql = 'select * from profile_visitor'
 		//. ' where create_time > "' . strtotime(date('Y-m-d', strtotime('+0 day')))
 		 . ' limit ' . $start_id . ', 10;';
 		$data = R::getAll($sql);
-		$sql = 'select count(*) as num from web_visitor'
+		$sql = 'select count(*) as num from profile_visitor'
 		//. ' where create_time > "' . strtotime(date('Y-m-d', strtotime('+0 day')))
 		 . '';
 		$num = R::getAll($sql);

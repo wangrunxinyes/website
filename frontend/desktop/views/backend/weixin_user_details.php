@@ -45,7 +45,7 @@ $last_time = date("Y/m/d H:i:s", $user->getValue('last_visit_time'));
 								</div>
 							</div>
 							<div class="form-group">
-								<label>访问次数</label>
+								<label>请求次数</label>
 								<div class="input-icon">
 									<i class="fa fa-phone-square "></i>
 									<input class="form-control" value="<?php echo $user->

@@ -238,6 +238,14 @@ class BackendController extends Controller {
 
 	}
 
+	public function actionVips() {
+
+		self::check();
+
+		$this->render('profile_visitor_list');
+
+	}
+
 	public function actionMessagelist() {
 
 		self::check();

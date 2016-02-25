@@ -12,6 +12,7 @@ class visitor_helper {
 	}
 
 	public static function store_visitor() {
+
 		$attrName = "web_visitor";
 
 		$ip = self::get_ip();
@@ -30,6 +31,49 @@ class visitor_helper {
 			$unit->count = 1;
 			$unit->create_time = time();
 		}
+
+		if (self::is_moble()) {
+			$unit->type = "M";
+		} else {
+			$unit->type = "D";
+		}
+
+		$unit->ip = $ip;
+		$unit->last_visit_time = time();
+		R::store($unit);
+
+		if (isset($_GET['view'])) {
+			if ($_GET['view'] == "profile") {
+				self::store_vip();
+				echo 'loading files, please wait for <span id="tiao">2</span>
+<a href="javascript:countDown"></a>
+second...
+<meta http-equiv=refresh content=2;url=\'http://wangrunxin.com/wang/framework/type/about\'>
+
+<!--脚本开始-->
+<script language="javascript" type="">
+function countDown(secs){
+  document.getElementById("tiao").innerHTML=secs;
+  if(--secs>0)
+   setTimeout("countDown("+secs+")",1000);
+  }
+  countDown(2);
+</script>
+<!--脚本结束-->
+';
+				exit;
+			}
+		}
+	}
+
+	public static function store_vip() {
+		$attrName = "profile_visitor";
+
+		$ip = self::get_ip();
+
+		$unit = R::dispense($attrName);
+		$unit->count = 1;
+		$unit->create_time = time();
 
 		if (self::is_moble()) {
 			$unit->type = "M";
@@ -89,7 +133,8 @@ class visitor_helper {
 
 	public static function get_ip() {
 		$iipp = $_SERVER["REMOTE_ADDR"];
-		if ($iipp == null || strlen($iipp) < 2) {
+		if ($iipp == null || strlen($iipp)
+			< 2) {
 			$iipp = "0.0.0.3";
 		}
 		return $iipp;
@@ -99,49 +144,3 @@ class visitor_helper {
 
 	}
 }
-
-// include 'chk_browser.php';
-
-// $con = mysqli_connect("localhost", "wangrunxin", "wangrunxinyes") or die("can't connect the server");
-// If (!$con) {
-// 	//die output a message and terminate the current script
-// 	die('Could not connect: ' . mysqli_connect_errno());
-// }
-// mysqli_select_db($con, 'sqlwangrunxin') or
-// die('Could not select database.');
-
-// if (!isset($vip)) {
-// 	$vip = 0;
-// }
-
-// //control ip;
-// $iipp = $_SERVER["REMOTE_ADDR"];
-// include 'php/ip.info.php';
-// $ip = (new ip_info);
-// $resultData = $ip->getInfoByIpViaSina($iipp);
-// $area = $resultData['area'];
-// $city = $resultData['city'];
-
-// mysqli_query($con, 'set names utf8');
-// $query = "Insert into website_visitor(visitor_ip,visitor_lastdate,visitor_agent,visitor_os,visitor_vip,visitor_area,visitor_city) values('"
-// . mysqli_real_escape_string($con, $iipp) . "','"
-// . time() . "','" . $type . "','" .
-// $browserType . "','" .
-// $vip . "','" .
-// $area . "','" .
-// $city . "')";
-
-// $result = mysqli_query($con, $query) or die('Exception report: Ref.5L+d5a2Y6K6/5a6i6K6w5b2V5aSx6LSl.<input type="hidden" value="' . $query . '">');
-
-// $query = "select notice_details, notice_group, notice_state from website_notice where notice_state = 1";
-// $result = mysqli_query($con, $query) or die('Exception report: Ref.6K+75Y+W5YWs5ZGK5aSx6LSl.');
-
-// $showMessage = 0;
-// while ($row = mysqli_fetch_array($result)) {
-// 	$MessageData = $row[0];
-// 	$showMessage = $row[1];
-// }
-
-// mysqli_free_result($result);
-// mysqli_close($con);
-?>

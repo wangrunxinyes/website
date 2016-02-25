@@ -23,6 +23,7 @@ class SystemMenu {
 
 		$user = '';
 		$user_fans = '';
+		$user_profile = '';
 		$user_group = '';
 		$user_analysis = '';
 		$user_data_export = '';
@@ -52,6 +53,14 @@ class SystemMenu {
 			$user = 'class="start active open"';
 
 			$user_fans = 'class="active"';
+
+			break;
+
+		case 'vips':
+
+			$user = 'class="start active open"';
+
+			$user_profile = 'class="active"';
 
 			break;
 
@@ -213,7 +222,7 @@ class SystemMenu {
 
 		<a href="javascript:;"> <i class="icon-home"></i>
 
-			<span class="title">公众号管理系统</span>
+			<span class="title">后台管理系统</span>
 
 			<span class="selected"></span>
 
@@ -258,6 +267,16 @@ class SystemMenu {
 
 
 							用户访问列表
+				</a>
+
+			</li>
+
+			<li ' . $user_profile . '>
+
+				<a href="' . Yii::app()->
+			assets->getUrlPath('backend/vips') . '">
+
+							简历访问列表
 				</a>
 
 			</li>
