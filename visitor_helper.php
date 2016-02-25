@@ -15,6 +15,8 @@ class visitor_helper {
 		$attrName = "web_visitor";
 
 		$ip = self::get_ip();
+		print_r($ip);
+		exit;
 		$search = ' ip = :ip';
 		$searchValue = array(
 			':ip' => $ip,
@@ -89,7 +91,7 @@ class visitor_helper {
 
 	public static function get_ip() {
 		$iipp = $_SERVER["REMOTE_ADDR"];
-		if ($iipp == null || $iipp = "" || strlen($iipp) < 2) {
+		if ($iipp == null || strlen($iipp) < 2) {
 			$iipp = "0.0.0.3";
 		}
 		return $iipp;
