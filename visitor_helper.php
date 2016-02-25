@@ -89,10 +89,7 @@ class visitor_helper {
 
 	public static function get_ip() {
 		$iipp = $_SERVER["REMOTE_ADDR"];
-		print_r($_SERVER["REMOTE_ADDR"]);
-		print_r($_SERVER);
-		exit;
-		if ($iipp == null || $iipp = "" || count($iipp) < 2) {
+		if ($iipp == null || $iipp = "" || strlen($iipp) < 2) {
 			$iipp = "0.0.0.3";
 		}
 		return $iipp;
