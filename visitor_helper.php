@@ -15,8 +15,6 @@ class visitor_helper {
 		$attrName = "web_visitor";
 
 		$ip = self::get_ip();
-		print_r($ip);
-		exit;
 		$search = ' ip = :ip';
 		$searchValue = array(
 			':ip' => $ip,
